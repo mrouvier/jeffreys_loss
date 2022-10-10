@@ -4,7 +4,7 @@ Regularization of neural network output distribution applied to speaker recognit
 
 ## Overview
 
-In this repository, we provide an implementation of JeyffreyLoss in PyTorch. JeffreyLoss is loss function based on Jeffreys distance.
+In this repository, we provide an implementation of JeyffreysLoss in PyTorch. JeffreysLoss is loss function based on Jeffreys distance.
 
 
 ## *Reference*
