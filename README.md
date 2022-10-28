@@ -1,6 +1,6 @@
-# [ICASSP 2023] Regularization of neural network output distribution applied to speaker recognition
+# [ICASSP 2023] Jeffreys divergence-based regularization of neural network output distribution applied to speaker recognition
 
-Regularization of neural network output distribution applied to speaker recognition (Pierre-Michel Bousquet and Mickael Rouvier, ICASSP 2023)
+Jeffreys divergence-based regularization of neural network output distribution applied to speaker recognition (Pierre-Michel Bousquet and Mickael Rouvier, ICASSP 2023)
 
 ## Overview
 
@@ -12,7 +12,7 @@ In this repository, we provide an implementation of JeyffreysLoss in PyTorch. Je
 The paper "Regularization of neural network output distribution applied to speaker recognition" has been sended to ICASSP 2023. Please cite us :
 
     @article{pmbousquet2023,
-      title={Regularization of neural network output distribution applied to speaker recognition},
+      title={Jeffreys divergence-based regularization of neural network output distribution applied to speaker recognition},
       author={Bousquet, Pierre-Michel and Rouvier, Mickael},
       journal={IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
       year={2023}
