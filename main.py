@@ -1,5 +1,6 @@
 import torch
 from torch.nn.modules.loss import _WeightedLoss
+import torch.nn.functional as F
 
 
 class JeffreysLoss(_WeightedLoss):
