@@ -31,7 +31,7 @@ class JeffreysLoss(_WeightedLoss):
         return targets
 
     def forward(self, inputs, targets):
-        targets1 = JeffreysLossGood._smooth_one_hot(targets, inputs.size(-1), self.coeff1,self.coeff2)
+        targets1 = JeffreysLoss._smooth_one_hot(targets, inputs.size(-1), self.coeff1,self.coeff2)
         sm = F.softmax(inputs, -1)
         lsm = F.log_softmax(inputs, -1)
         if self.weight is not None:
@@ -42,10 +42,10 @@ class JeffreysLoss(_WeightedLoss):
 
         # Jeffreys part 2
         lsmsm = lsm * sm
-        targets21 = JeffreysLossGood._jeffreys_one_cold(targets, inputs.size(-1),)
+        targets21 = JeffreysLoss._jeffreys_one_cold(targets, inputs.size(-1),)
         loss1 = (targets21 * lsmsm).sum(-1)
 
-        targets22 = JeffreysLossGood._jeffreys_one_hot(targets, inputs.size(-1),)
+        targets22 = JeffreysLoss._jeffreys_one_hot(targets, inputs.size(-1),)
         loss2 = (targets22 * sm).sum(-1)
 
         loss3 = loss1/(torch.ones_like(loss2)-loss2)
