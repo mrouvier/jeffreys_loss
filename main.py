@@ -31,7 +31,7 @@ class JeffreysLoss(_WeightedLoss):
             targets = torch.empty(size=(targets.size(0), n_classes), device=targets.device).fill_(0).scatter_(1, targets.data.unsqueeze(1),1.0)
         return targets
 
-    def forward(self, inputs, targets):
+    def forward(self, inputs: torch.Tensor, targets: torch.Tensor):
         targets1 = JeffreysLoss._smooth_one_hot(targets, inputs.size(-1), self.coeff1,self.coeff2)
         sm = F.softmax(inputs, -1)
         lsm = F.log_softmax(inputs, -1)
@@ -60,6 +60,13 @@ class JeffreysLoss(_WeightedLoss):
         return loss
 
 
+
+
 criterion = JeffreysLoss(coeff1=0.1, coeff2=0.025)
 
+l1 = torch.FloatTensor([[0,0,1],[1,0,0],[0,0,1]])
+l2 = torch.LongTensor([2,2,2])
+
+r = criterion.forward(l1,l2)
+print(r)
 
